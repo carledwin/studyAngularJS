@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+<body>
+	<div ng-app="tApp" ng-controller="tCtrl">
+		<button ng-click="tFuncShowHide()">Show/Hide</button>
+	
+	<div ng-show="dvShow">
+		<br>
+		<h3 style="color:gray">Content</h3>
+	</div>
+	
+	<br>
+	<br>
+	<button ng-click="tFuncSum()"> + </button>
+	<button ng-click="tFuncSubtract()"> - </button>
+	<br>
+	<p>{{valu}}</p>
+	
+	<div>
+	
+	<div>
+</div>
+
+
+<script>
+	var app = angular.module('tApp',[]);
+	app.controller(
+		'tCtrl',
+		function($scope){
+			$scope.dvShow = false;
+			$scope.valu = 0;
+			$scope.tFuncShowHide = function(){
+				$scope.dvShow = !$scope.dvShow;
+			}
+			$scope.tFuncSum = function(){
+				$scope.valu++;
+			}
+			$scope.tFuncSubtract = function(){
+				$scope.valu--;
+			}
+		}
+		);
+</script>	
+	
+</body>
+</html>
